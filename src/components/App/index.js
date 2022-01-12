@@ -1,8 +1,9 @@
 //import './App.css';
-import React, { useState } from "react";
+import React from "react";
+import { TodoProvider } from "../TodoContext";
 import { AppUI } from "./AppUI";
 
-const defaultTodos = [
+/* const defaultTodos = [
   {
     text: "cortar cebollas",
     completed: false,
@@ -15,51 +16,13 @@ const defaultTodos = [
     text: "cortar peras",
     completed: false,
   },
-];
+]; */
 
 function App() {
-  const [todos, setTodos] = useState(defaultTodos);
-  const [searchValue, setSearchValue] = useState("");
-
-  const completedTodos = todos.filter((t) => t.completed).length;
-  const totalTodos = todos.length;
-
-  let searchedTodos = [];
-  if (searchValue.length) {
-    searchedTodos = todos.filter((t) => {
-      const todoText = t.text.toLowerCase();
-      const searchText = searchValue.toLowerCase();
-      return todoText.includes(searchText);
-    });
-  } else {
-    searchedTodos = todos;
-  }
-
-  const completeTodo = (text) => {
-    const todoIndex = todos.findIndex((t) => t.text === text);
-    const newTodos = [...todos];
-
-    todos[todoIndex].completed = true;
-    setTodos(newTodos);
-  };
-
-  const deleteTodo = (text) => {
-    const todoIndex = todos.findIndex((t) => t.text === text);
-    const newTodos = [...todos];
-
-    newTodos.splice(todoIndex, 1);
-    setTodos(newTodos);
-  };
   return (
-    <AppUI
-      totalTodos={totalTodos}
-      completedTodos={completedTodos}
-      searchValue={searchValue}
-      setSearchValue={setSearchValue}
-      searchedTodos={searchedTodos}
-      completeTodo={completeTodo}
-      deleteTodo={deleteTodo}
-    />
+    <TodoProvider>
+      <AppUI />
+    </TodoProvider>
   );
 }
 
