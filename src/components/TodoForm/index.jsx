@@ -5,7 +5,11 @@ import "./TodoForm.css";
 
 function TodoForm() {
   const { addTodo, setOpenModal } = useContext(TodoContext);
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   /* const onChange = (event) => {
     setNewTodoValue(event.target.value);
   }; */
@@ -19,7 +23,12 @@ function TodoForm() {
   return (
     <form onSubmit={handleSubmit(onAdd)}>
       <label>Escribe una nueva tarea</label>
-      <textarea {...register("text")} placeholder="Una tarea" />
+      <textarea
+        id="text"
+        {...register("text", { required: true })}
+        placeholder="Acariciar a la michi"
+      />
+      {errors.text && <span role="alert">Debe poner una tarea</span>}
       <div className="TodoForm-buttonContainer">
         <button
           type="button"

@@ -9,12 +9,15 @@ function TodoSearch() {
     setSearchValue(event.target.value);
   };
   return (
-    <input
-      className="TodoSearch"
-      onChange={onSearchValueChange}
-      value={searchValue}
-      placeholder="Cebolla"
-    />
+    <div className="TodoSearch-Container">
+      <label htmlFor="">Buscador de tareas</label>
+      <input
+        className="TodoSearch"
+        onChange={onSearchValueChange}
+        value={searchValue}
+        placeholder="Comprar comida para la michi"
+      />
+    </div>
   );
 }
 export { TodoSearch };

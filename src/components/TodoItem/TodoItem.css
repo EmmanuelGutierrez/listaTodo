@@ -1,11 +1,11 @@
 .TodoItem {
-  background-color: #606b9b;
+  background-color: #384892;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 24px;
-  box-shadow: 0px 5px 50px rgba(93, 135, 219, 0.226);
+  box-shadow: 0px 5px 50px rgba(103, 149, 241, 0.376);
 }
 
 .TodoItem-p {
@@ -18,7 +18,7 @@
 .TodoItem-p--complete {
   text-decoration: line-through;
 
-  background-color: #4f61b1;
+  background-color: #6a7ac3;
 }
 
 .Icon {
