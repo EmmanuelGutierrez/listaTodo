@@ -55,6 +55,10 @@ textarea:focus {
   border-radius: 2px;
   border: none;
   font-family: "Nunito";
+  transition: 1000ms;
+}
+.TodoForm-button:hover {
+  filter: invert(20%);
 }
 
 .TodoForm-button-add {

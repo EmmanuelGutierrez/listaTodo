@@ -22,7 +22,7 @@ function TodoList(props) {
 
       {!loading && !searchedTodos?.length && !totalTodos && onEmpty()}
       {!!totalTodos && !searchedTodos?.length && onEmptySearch(searchText)}
-      {searchedTodos.map(render || children)}
+      {!loading && searchedTodos.map(render || children)}
     </section>
   );
 }

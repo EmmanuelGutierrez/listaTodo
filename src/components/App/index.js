@@ -14,6 +14,7 @@ import { TodoList } from "../TodoList";
 import { TodoSearch } from "../TodoSearch";
 import { TodosError } from "../TodosError";
 import { EmptyTodosSearch } from "../EmptyTodosSearch";
+import { ChangeAlert } from "../ChangeAlert";
 
 /* const defaultTodos = [
   {
@@ -44,6 +45,7 @@ function App() {
     searchValue,
     setSearchValue,
     addTodo,
+    syncTodos,
   } = useTodos();
   return (
     <React.Fragment>
@@ -102,6 +104,8 @@ function App() {
           </Modal>
         ) : null}
         <CreateTodoButton setOpenModal={setOpenModal} />
+        <ChangeAlert sincronize={syncTodos} />
+        {/* <ChangeAlertWithStorageListener sincronize={syncTodos} /> ESTO ES SI USO HOC*/}
       </Container>
     </React.Fragment>
   );
