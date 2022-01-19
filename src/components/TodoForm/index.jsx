@@ -1,10 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
-import { TodoContext } from "../TodoContext";
 import "./TodoForm.css";
 
-function TodoForm() {
-  const { addTodo, setOpenModal } = useContext(TodoContext);
+function TodoForm({ addTodo, setOpenModal }) {
   const {
     register,
     handleSubmit,

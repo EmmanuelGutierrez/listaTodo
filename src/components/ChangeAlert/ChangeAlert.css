@@ -1,0 +1,32 @@
+.ChangeAlertButton-button {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: 400;
+  width: 120px;
+  height: 48px;
+  border-radius: 2px;
+  border: none;
+  font-family: "Nunito";
+  background-color: #6d2447;
+  box-shadow: 0px 5px 25px #e7c8d775;
+  transition: 1000ms;
+}
+
+.ChangeAlertButton-button:hover {
+  transition: 1000ms;
+  background-color: #501733;
+  box-shadow: 0px 5px 25px #bea6b275;
+}
+
+.ChangeAlert-container {
+  font-size: 22px;
+  width: 90%;
+  max-width: 400px;
+  background-color: rgb(200, 37, 86);
+  padding: 33px 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

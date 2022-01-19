@@ -30,6 +30,7 @@
   width: 48px;
   font-size: 24px;
   font-weight: bold;
+  user-select: none;
 }
 
 .Icon-check {
@@ -37,18 +38,24 @@
   left: 12px;
 }
 .Icon-check:hover {
-  color: #4caf50;
+  color: #93f196;
 }
 .Icon-check--active {
   color: #4caf50;
   box-shadow: 0px 5px 50px #4caf4f9f;
 }
 
+.Icon-check--active:hover {
+  color: #7fb881;
+}
+
 .Icon-delete {
+  color: rgb(209, 46, 46);
   position: absolute;
   top: -6px;
   right: 0;
 }
 .Icon-delete:hover {
-  color: rgb(235, 74, 74);
+  color: #eb4a4a;
+  box-shadow: 0px 5px 50px #eb4a4a80;
 }
