@@ -7,7 +7,7 @@ function useTodos(props) {
     saveItem: saveTodos,
     error,
     loading,
-    syncItem: syncTodos,
+    sincItem: syncTodos,
   } = useLocalStorage("TODOS_V1", []);
   const [searchValue, setSearchValue] = useState("");
   const [openModal, setOpenModal] = useState(false);
@@ -50,20 +50,28 @@ function useTodos(props) {
     newTodos.splice(todoIndex, 1);
     saveTodos(newTodos);
   };
-  return {
+
+  const state = {
+    openModal,
     totalTodos,
+    loading,
+    error,
     completedTodos,
     searchValue,
-    setSearchValue,
     searchedTodos,
+  };
+  const stateUpdaters = {
     addTodo,
     completeTodo,
     deleteTodo,
-    loading,
-    error,
-    openModal,
+    setSearchValue,
     setOpenModal,
     syncTodos,
+  };
+
+  return {
+    state,
+    stateUpdaters,
   };
 }
 
